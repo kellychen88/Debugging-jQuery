@@ -1,8 +1,8 @@
 <html>
 <head>
 	<title>jQuery</title>
-	<link rel="stylesheet" type="text/css" href="debugging_jquery.css">
 	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+	<link rel="stylesheet" type="text/css" href="debugging_jquery.css">
 	<script type="text/javascript">
 		$(document).ready(function(){
 
@@ -25,8 +25,13 @@
 			})
 
 			$('button').click(function(){
-				var result = $('input:checked').val()  
-				alert("Thank you for your input, we like " + result + " too!");
+				var result = $('input:checked').val();
+				if ( typeof(result)  != "undefined") {
+					alert("We like " + result + " too!");					
+				}
+				else {
+					alert("Please select your favorite pizza topping!");
+				}
 			})
 
 
